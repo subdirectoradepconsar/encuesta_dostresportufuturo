@@ -1,8 +1,8 @@
-# Encuesta Universal
+# Encuesta dos de tres por tu futuro
 
 Encuesta de satisfacción CONSAR, publicada en GitHub Pages.
 
-Sitio: https://subdirectoradepconsar.github.io/Encuesta_Universal/
+Sitio: https://subdirectoradepconsar.github.io/encuesta_dostresportufuturo/
 
 ## Publicación
 

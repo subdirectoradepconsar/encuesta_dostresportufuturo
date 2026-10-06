@@ -1,3 +1,4 @@
+const ID_HOJA_CALCULO = '1Li8QcCz2n_ugcjOWfic2mJx0qeijrn1DHU8cuWq2ag0';
 const NOMBRE_HOJA = 'Respuestas';
 const ENCABEZADOS = ['Fecha y hora', 'Público', 'Satisfacción', 'Comentarios'];
 
@@ -11,7 +12,7 @@ function guardarRespuesta(datos) {
   lock.waitLock(30000);
 
   try {
-    const libro = SpreadsheetApp.getActiveSpreadsheet();
+    const libro = SpreadsheetApp.openById(ID_HOJA_CALCULO);
     let hoja = libro.getSheetByName(NOMBRE_HOJA);
 
     if (!hoja) {

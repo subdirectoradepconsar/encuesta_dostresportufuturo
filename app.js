@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const charCount = document.getElementById('charCount');
 
   // URL del Web App de Google Apps Script
-  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby48auBrEWt_V6SZ7qPg5nBx-cJYQg-yjx_s8xzBC75D56mBISYq9sJJemOtUnEtbrxow/exec';
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwiuderOKER6Kg6JBqETaazeyToN8DL-5ZaacbKna0DHd6fth15PM2QaNlBxWie_I8z/exec';
 
   /**
    * Contador de caracteres en tiempo real para Pregunta 2
@@ -104,8 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       const payload = {
-        // Mantener compatibilidad con el Apps Script publicado, que requiere público.
-        publico: 'A dos de tres por tu futuro',
         satisfaccion: valorSeleccionado,
         comentarios: feedbackText
       };

@@ -55,38 +55,10 @@
       <!-- Formulario de Encuesta -->
       <form id="surveyForm" novalidate>
 
-        <!-- Organización / público -->
-        <article class="card question-card" id="card-organizacion">
-          <div class="question-header">
-            <span class="question-number">1</span>
-            <h2 class="question-title">
-              ¿A qué <strong class="highlight">público</strong> perteneces? <span
-                class="required-asterisk" title="Campo obligatorio">*</span>
-            </h2>
-          </div>
-
-          <div class="select-wrapper">
-            <select id="organizacion" name="organizacion" required>
-              <option value="" selected disabled>-- Selecciona una opción --</option>
-              <option value="Federación Mexicana de Fútbol">1. Federación Mexicana de Fútbol</option>
-              <option value="Feria de Afores 2026">2. Feria de Afores 2026</option>
-              <option value="Consulado Sacramento">3. Consulado Sacramento</option>
-              <option value="UVM Campus Coyoacán">4. UVM Campus Coyoacán</option>
-              <option value="Consulado Nueva Orleans">5. Consulado Nueva Orleans</option>
-              <option value="SNEF">6. SNEF</option>
-              <option value="Otra">7. Otra</option>
-            </select>
-          </div>
-
-          <div class="error-msg" id="error-organizacion">
-            Por favor selecciona tu organización.
-          </div>
-        </article>
-
         <!-- Pregunta 1 -->
         <article class="card question-card" id="card-q1">
           <div class="question-header">
-            <span class="question-number">2</span>
+            <span class="question-number">1</span>
             <h2 class="question-title">
               ¿Qué tan satisfecho(a) estás con la <strong class="highlight">charla</strong>? <span
                 class="required-asterisk" title="Campo obligatorio">*</span>
@@ -151,16 +123,16 @@
         <!-- Pregunta 2 (Respuesta Abierta) -->
         <article class="card question-card" id="card-q2">
           <div class="question-header">
-            <span class="question-number">3</span>
+            <span class="question-number">2</span>
             <h2 class="question-title">
-              ¿Qué fue lo que más te gustó de la <strong class="highlight">charla</strong> o qué <strong
+              ¿Qué opinas de la <strong class="highlight">actividad</strong> o qué <strong
                 class="highlight">mejorarías</strong>?
             </h2>
           </div>
 
           <div class="textarea-wrapper">
             <textarea name="q2" id="textarea-q2" rows="4" maxlength="1000"
-              placeholder="Escribe aquí tu opinión, comentarios o sugerencias sobre la charla..."></textarea>
+              placeholder="Escribe aquí tu opinión, comentarios o sugerencias sobre la actividad..."></textarea>
             <div class="textarea-footer">
               <span class="char-count" id="charCount">0 / 1000</span>
             </div>

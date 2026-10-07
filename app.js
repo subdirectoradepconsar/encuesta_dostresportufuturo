@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const likertOptions = document.querySelectorAll('.likert-option');
   const textareaQ2 = document.getElementById('textarea-q2');
   const charCount = document.getElementById('charCount');
-  const organizacionSelect = document.getElementById('organizacion');
 
   // URL del Web App de Google Apps Script
   const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby48auBrEWt_V6SZ7qPg5nBx-cJYQg-yjx_s8xzBC75D56mBISYq9sJJemOtUnEtbrxow/exec';
@@ -75,21 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (submitBtn.disabled || successModal.classList.contains('active')) return;
 
     const cardQ1 = document.getElementById('card-q1');
-    const cardOrganizacion = document.getElementById('card-organizacion');
     const selectedRadio = form.querySelector('input[name="q1"]:checked');
     const feedbackText = textareaQ2 ? textareaQ2.value.trim() : '';
-    const organizacion = document.getElementById('organizacion').value;
-
-    // Validación de organización obligatoria
-    if (!organizacion) {
-      if (cardOrganizacion) {
-        cardOrganizacion.classList.add('error-state');
-        cardOrganizacion.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-      return;
-    }
-
-    if (cardOrganizacion) cardOrganizacion.classList.remove('error-state');
 
     // Validación de respuesta obligatoria (Pregunta 1)
     if (!selectedRadio) {
@@ -118,7 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       const payload = {
-        publico: organizacion,
+        // Mantener compatibilidad con el Apps Script publicado, que requiere público.
+        publico: 'A dos de tres por tu futuro',
         satisfaccion: valorSeleccionado,
         comentarios: feedbackText
       };
@@ -148,11 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  organizacionSelect.addEventListener('change', () => {
-    const cardOrganizacion = document.getElementById('card-organizacion');
-    if (cardOrganizacion) cardOrganizacion.classList.remove('error-state');
-  });
-
   /**
    * Reinicio del formulario desde el modal de éxito
    */
@@ -163,7 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Limpiar formulario y selección visual
     form.inert = false;
     form.reset();
-    organizacionSelect.focus({ preventScroll: true });
+    const firstRadio = form.querySelector('input[name="q1"]');
+    if (firstRadio) firstRadio.focus({ preventScroll: true });
     likertOptions.forEach(option => {
       option.classList.remove('selected');
       option.removeAttribute('data-value');
